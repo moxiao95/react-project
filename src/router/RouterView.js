@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Link, Route } from 'react-router-dom';
+import { Switch, Redirect, Route } from 'react-router-dom';
 
-const Home = () => (
-    <div>
-		<h2>Home</h2>
-	</div>
-);
+import Routers from './RouterConfig';
 
-class App extends Component {
-    render() {
-        return (
-            <Router>
-                <Route path="/" component={ Home } />
-            </Router>
-        );
-    }
+export default function App() {
+    let routers = Routers.filter(item => item.component);
+    let redirect = Routers.filter(item => !item.component);
+
+    return (
+        <Switch>
+            {
+                routers.map((item, index) => {
+                    return (
+                        <Route key={index} exact path={item.path} render={rProps => {
+                            return item.children ? <item.component {...rProps} routes={item.children} />  : <item.component {...rProps} />;
+                        }} />
+                    )
+                })
+            }
+            {
+                redirect.map((item, index) => <Redirect key={index} from={item.from} to={item.to} />)
+            }
+        </Switch>
+    );
 }
-
-export default App;
