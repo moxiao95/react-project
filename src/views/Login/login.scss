@@ -1,5 +1,42 @@
 .page-login {
-    position: relative;
-
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url(../../img/bg.png) no-repeat center;
     
+    .login-box {
+        width: 800px;
+        height: 400px;
+        margin: 200px auto;
+        background: #fff url(../../img/left.png) no-repeat center left;
+    
+        .login-box-content {
+            float: right;
+            width: 280px;
+            height: 400px;
+            background-color: rgb(245, 245, 245);
+
+            .login-box-head {
+                height: 130px;
+                font: 26px/130px "微软雅黑";
+                color: rgb(58, 152, 240);
+                text-align: center;
+            }
+
+            .login-user {
+                width: 200px;
+                margin: 20px 40px;
+            }
+
+            .login-password {
+                width: 200px;
+                margin: 20px 40px;
+            }
+
+            .login-btn {
+                width: 200px;
+                margin: 20px 40px;
+            }
+        }
+    }
 }

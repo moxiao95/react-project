@@ -5,11 +5,7 @@ import { Component } from 'react';
 import './login.scss';
 
 // 引入element
-import { Input, Button, Notification } from 'element-react';
-
-// 引入组件
-import UserInput from '../../components/Login/UserInput';
-
+import { Input, Button, Message } from 'element-react';
 
 // 导出登录模块
 export default class Login extends Component {
@@ -18,23 +14,21 @@ export default class Login extends Component {
         this.state = {
             user: '',
             password: '',
-            userShow: false,
-            passwordShow: false,
         }
         this.changeUser = this.changeUser.bind(this);
-        this.changepassword = this.changepassword.bind(this);
+        this.changePassword = this.changePassword.bind(this);
         this.login = this.login.bind(this);
     }
 
     // 修改账号
     changeUser(e) {
         this.setState({
-            user: e,
+            user: e.trim(),
         });
     }
 
     // 修改密码
-    changepassword(e) {
+    changePassword(e) {
         this.setState({
             password: e,
         });
@@ -42,29 +36,57 @@ export default class Login extends Component {
 
     //点击登录 
     login() {
-        if (this.state.user === '' || this.state.password === '') {
+        if (this.state.user === '' ) {
+            Message('账号不能为空！');
             this.setState({
-                userShow: !this.state.userShow,
-                passwordShow: !this.state.passwordShow,
+                password: '',
             });
+            return;
+        } else if (this.state.password === '') {
+            Message('密码不能为空！');
+            return;
+        } else if (!/^1\d{10}/.test(this.state.user)) {
+            Message('请输入正确的账号！');
+            return;
+        } else if (this.state.password.length < 8) {
+            Message('密码最少为8位！');
+            this.setState({
+                password: '',
+            });
+            return;
         }
-        // this.props.history.push('/home');
+        this.props.history.push('/home');
     }
 
     render() {
-        let { passwordShow } = this.state;
-
-        let passwordPointOut = <div>请输入正确的密码</div>;
-        if (!passwordShow) {
-            passwordPointOut = <div>-</div>;
-        }
+        let { user, password } = this.state;
 
         return (
             <div className="page-login">
-                <UserInput changeUser={this.changeUser} />
-                <Input placeholder="请输入密码" onChange={this.changepassword}/>
-                { passwordPointOut }
-                <Button type="primary" onClick={this.login}>登录</Button>
+                <section className="login-box">
+                    <div className="login-box-content">
+                        <header className="login-box-head">论文系统</header>
+                        <div className="login-user">
+                            <Input
+                                className="login-user-input"
+                                placeholder="请输入账号"
+                                value={user}
+                                onChange={this.changeUser}
+                                maxLength={11}
+                            />
+                        </div>
+                        <div className="login-password">
+                            <Input
+                                placeholder="请输入密码"
+                                value={password}
+                                type="password"
+                                onChange={this.changePassword}
+                                maxLength={16}
+                            />
+                        </div>
+                        <Button className="login-btn" type="primary" onClick={this.login}>登录</Button>
+                    </div>
+                </section>
             </div>
         )
     }

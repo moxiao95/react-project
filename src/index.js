@@ -1,7 +1,7 @@
 // 引入依赖
 import React, { component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 
 // 引入redux
 import { Provider } from 'react-redux';
