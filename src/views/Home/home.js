@@ -1,7 +1,10 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import './home.scss'
+import './home.scss';
+
+import Test from '../Home/Test/Test';
+import About from '../Home/About/About';
 
 export default class Home extends Component {
     constructor(props) {
@@ -10,16 +13,15 @@ export default class Home extends Component {
     }
 
     goLogin() {
-        this.props.history.push('/home/test');
+        this.props.history.push('/login');
     }
 
     render() {
-        console.log(this);
         return (
             <div>
                 Home
-                <Link to="/home/test">aaaa</Link>
-                {/* <button onClick={this.goLogin}>返回</button> */}
+                <Link to="/my">我的</Link>
+                <button onClick={this.goLogin}>返回</button>
             </div>
         )
     }

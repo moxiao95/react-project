@@ -12,8 +12,8 @@ export default function App() {
             {
                 routers.map((item, index) => {
                     return (
-                        <Route key={index} exact path={item.path} render={rProps => {
-                            return item.children ? <item.component {...rProps} routes={item.children} />  : <item.component {...rProps} />;
+                        <Route key={index} path={item.path} render={rProps => {
+                            return item.children ? <item.component {...rProps} routes={item.children} /> : <item.component {...rProps} />;
                         }} />
                     )
                 })
