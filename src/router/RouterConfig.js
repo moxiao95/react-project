@@ -1,6 +1,11 @@
-import Home from '../views/Home/home';
-import Login from '../views/Login/login';
-import My from '../views/My/my';
+import Login from '../views/Login/Login';
+import Home from '../views/Home/Home';
+import Notice from '../views/Notice/Notice';
+import Data from '../views/Data/Data';
+import Help from '../views/Help/Help';
+import My from '../views/My/My';
+import Personal from '../views/Personal/Personal';
+import Edit from '../views/Edit/Edit';
 
 const Routers = [
     {
@@ -12,8 +17,28 @@ const Routers = [
         component: Home,
     },
     {
+        path: '/notice',
+        component: Notice,
+    },
+    {
+        path: '/data',
+        component: Data,
+    },
+    {
+        path: '/help',
+        component: Help,
+    },
+    {
         path: '/my',
         component: My,
+    },
+    {
+        path: '/personal',
+        component: Personal,
+    },
+    {
+        path: '/edit',
+        component: Edit,
     },
     {
         path: '/login',

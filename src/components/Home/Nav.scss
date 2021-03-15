@@ -1,0 +1,81 @@
+.nav-page {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    padding: 5px 0;
+    background: rgb(248, 248, 248);
+
+    .page-logo {
+        float: left;
+        width: 335px;
+        height: 57px;
+        margin: 2px 0 0 20px;
+        background: url(../../img/logo.png) no-repeat center center;
+    }
+
+    .page-link {
+        float: right;
+        height: 60px;
+        margin-right: 20px;
+
+        li {
+            float: left;
+            padding: 0 20px;
+            height: 56px;
+            font: 14px/56px "微软雅黑";
+            border-top: 4px solid transparent;
+
+            &:hover {
+                border-top-color: rgb(138, 138, 206);
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+
+        .active-link {
+            border-top-color: rgb(138, 138, 206);
+            
+            a {
+                color: rgb(59, 77, 243);
+            }
+        }
+
+        .active-none {
+            position: relative;
+
+            &:hover {
+                border-top: 4px solid transparent;
+            }
+
+            .my-title {
+                float: left;
+                width: 57px;
+                height: 57px;
+                text-align: center;
+            }
+
+            .my-list {
+                position: absolute;
+                top: 60px;
+                right: 0;
+
+                div {
+                    width: 100px;
+                    height: 34px;
+                    background: rgb(245, 245, 245);
+                    font: 12px/34px "微软雅黑";
+                    text-align: center;
+
+                    &:hover {
+                        background: rgb(128, 206, 248);
+                    }
+                }
+            }
+        }
+    }
+}
