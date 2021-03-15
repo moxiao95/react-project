@@ -1,12 +1,11 @@
 import { Component } from 'react';
 
 export default class My extends Component {
-    constructor(props) {
-        super(props);
-        this.goback = this.goback.bind(this);
+    state = {
+        
     }
 
-    goback() {
+    goback = () => {
         this.props.history.push('/home');
     }
 

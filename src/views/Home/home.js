@@ -3,16 +3,12 @@ import { Link } from 'react-router-dom';
 
 import './home.scss';
 
-import Test from '../Home/Test/Test';
-import About from '../Home/About/About';
-
 export default class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.goLogin = this.goLogin.bind(this);
-    }
+    state = {
 
-    goLogin() {
+    }
+    
+    goLogin = () => {
         this.props.history.push('/login');
     }
 

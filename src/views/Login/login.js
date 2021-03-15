@@ -9,33 +9,27 @@ import { Input, Button, Message } from 'element-react';
 
 // 导出登录模块
 export default class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: '',
-            password: '',
-        }
-        this.changeUser = this.changeUser.bind(this);
-        this.changePassword = this.changePassword.bind(this);
-        this.login = this.login.bind(this);
+    state = {
+        user: '',
+        password: '',
     }
 
     // 修改账号
-    changeUser(e) {
+    changeUser = (e) => {
         this.setState({
             user: e.trim(),
         });
     }
 
     // 修改密码
-    changePassword(e) {
+    changePassword = (e) => {
         this.setState({
             password: e,
         });
     }
 
     //点击登录 
-    login() {
+    login = () => {
         if (this.state.user === '' ) {
             Message('账号不能为空！');
             this.setState({
