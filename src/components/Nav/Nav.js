@@ -20,8 +20,15 @@ class Nav extends Component {
         });
     }
 
+    toPersonal = () => {
+        this.props.history.push('/personal');
+    }
+
+    toEdit = () => {
+        this.props.history.push('/edit');
+    }
+
     logout = () => {
-        console.log(this);
         this.props.history.push('/login');
     }
 
@@ -53,7 +60,7 @@ class Nav extends Component {
 
         return (
             <div className="nav-page">
-                <div className="page-logo"></div>
+                <div className="page-logo">论文提交系统</div>
                 <ul className="page-link">
                     {
                         navList.map((e, i) => {
@@ -74,8 +81,8 @@ class Nav extends Component {
                             style={{display: childrenListShow ? 'block' : 'none'}}
                             onMouseLeave={this.hideChildrenList}
                         >
-                            <div>个人中心</div>
-                            <div>修改密码</div>
+                            <div onClick={this.toPersonal}>个人中心</div>
+                            <div onClick={this.toEdit}>修改密码</div>
                             <div onClick={this.logout}>退出登录</div>
                         </div>
                     </li>

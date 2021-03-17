@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import Nav from '../../components/Home/Nav';
+import Nav from '../../components/Nav/Nav';
 export default class My extends Component {
     goback = () => {
         this.props.history.push('/home');

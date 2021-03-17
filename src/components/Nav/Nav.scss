@@ -10,9 +10,12 @@
     .page-logo {
         float: left;
         width: 335px;
-        height: 57px;
-        margin: 2px 0 0 20px;
-        background: url(../../img/logo.png) no-repeat center center;
+        height: 60px;
+        margin-left: 20px;
+        font: bold 24px/60px "微软雅黑";
+        color: rgb(136, 129, 238);
+        letter-spacing: 5px;
+        text-align: center;
     }
 
     .page-link {

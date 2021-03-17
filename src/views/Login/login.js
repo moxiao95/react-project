@@ -2,7 +2,7 @@
 import { Component } from 'react';
 
 // 引入scss文件
-import './login.scss';
+import './Login.scss';
 
 // 引入element
 import { Input, Button, Message } from 'element-react';
