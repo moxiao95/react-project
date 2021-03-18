@@ -1,7 +1,7 @@
-// 引入依赖
+// 依赖
 import { Component } from 'react';
 
-// 引入scss文件
+// 样式
 import './Login.scss';
 
 // 引入element
@@ -60,6 +60,7 @@ export default class Login extends Component {
                 <section className="login-box">
                     <div className="login-box-content">
                         <header className="login-box-head">论文系统</header>
+                        {/* 账号 */}
                         <div className="login-user">
                             <Input
                                 className="login-user-input"
@@ -69,6 +70,7 @@ export default class Login extends Component {
                                 maxLength={11}
                             />
                         </div>
+                        {/* 密码 */}
                         <div className="login-password">
                             <Input
                                 placeholder="请输入密码"
@@ -78,7 +80,12 @@ export default class Login extends Component {
                                 maxLength={16}
                             />
                         </div>
-                        <Button className="login-btn" type="primary" onClick={this.login}>登录</Button>
+                        {/* 登录按钮 */}
+                        <Button
+                            className="login-btn"
+                            type="primary"
+                            onClick={this.login}
+                        >登录</Button>
                     </div>
                 </section>
             </div>

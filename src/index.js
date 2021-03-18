@@ -16,7 +16,9 @@ import 'element-theme-default';
 
 // 渲染
 ReactDOM.render(
+	// 路由
 	<BrowserRouter>
+		{/* redux */}
 		<Provider store={store}>
 			<App />
 		</Provider>

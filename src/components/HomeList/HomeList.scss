@@ -1,28 +1,41 @@
 .content-list {
     width: 1200px;
     height: 600px;
-    margin: 30px auto;
+    margin: 10% auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
 
     li {
+        position: relative;
         width: 280px;
         height: 270px;
         border-radius: 5px;
-        background: rgb(75, 136, 75);
+        background: rgba(87, 138, 87, 0.9);
         color: #fff;
 
         span {
             display: block;
             padding: 0 15px;
-            font: 18px/40px "微软雅黑";
+            font: bold 18px/40px "微软雅黑";
         }
 
         p {
             padding: 0 15px;
             font: 14px/36px "微软雅黑";
+        }
+
+        div {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            width: 44px;
+            height: 44px;
+            font: 12px/26px "微软雅黑";
+            cursor: pointer;
+            background: url(../../img/look.png) no-repeat center;
+            background-size: 50% 50%;
         }
     }
 }

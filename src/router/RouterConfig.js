@@ -1,3 +1,4 @@
+// 组件
 import Login from '../views/Login/Login';
 import Home from '../views/Home/Home';
 import Notice from '../views/Notice/Notice';
@@ -7,6 +8,7 @@ import My from '../views/My/My';
 import Personal from '../views/Personal/Personal';
 import Edit from '../views/Edit/Edit';
 
+// 定义路由配置
 const Routers = [
     {
         from: '/',
@@ -46,4 +48,5 @@ const Routers = [
     },
 ];
 
+// 导出路由配置
 export default Routers;

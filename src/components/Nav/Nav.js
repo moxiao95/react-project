@@ -1,33 +1,41 @@
+// 依赖
 import { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+// 样式
 import './Nav.scss';
 
 class Nav extends Component {
+    // 数据
     state = {
         childrenListShow: false,
     }
 
+    // 展示我的下的选项列表
     showChildrenList = () => {
         this.setState({
             childrenListShow: true,
         });
     }
 
+    // 关闭我的下的选项列表
     hideChildrenList = () => {
         this.setState({
             childrenListShow: false,
         });
     }
 
+    // 到 我的
     toPersonal = () => {
         this.props.history.push('/personal');
     }
 
+    // 到 修改密码
     toEdit = () => {
         this.props.history.push('/edit');
     }
 
+    // 退出
     logout = () => {
         this.props.history.push('/login');
     }
@@ -35,6 +43,7 @@ class Nav extends Component {
     render() {
         let { childrenListShow } = this.state;
         let { activeIndex } = this.props;
+        // 定义导航数据
         let navList = [
             {
                 title: '首页',
@@ -62,6 +71,7 @@ class Nav extends Component {
             <div className="nav-page">
                 <div className="page-logo">论文提交系统</div>
                 <ul className="page-link">
+                    {/* 导航按钮导航生成 */}
                     {
                         navList.map((e, i) => {
                             return (
@@ -71,6 +81,7 @@ class Nav extends Component {
                             )
                         })
                     }
+                    {/* '我的' 功能按钮 */}
                     <li
                         className="active-none"
                         onMouseEnter={this.showChildrenList}

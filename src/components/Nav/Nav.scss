@@ -30,8 +30,8 @@
             font: 14px/56px "微软雅黑";
             border-top: 4px solid transparent;
 
-            &:hover {
-                border-top-color: rgb(138, 138, 206);
+            &:hover a {
+                color: rgb(59, 77, 243);
             }
 
             a {
@@ -66,6 +66,8 @@
                 position: absolute;
                 top: 60px;
                 right: 0;
+                z-index: 1;
+                border-radius: 2px;
 
                 div {
                     width: 100px;
@@ -73,6 +75,7 @@
                     background: rgb(245, 245, 245);
                     font: 12px/34px "微软雅黑";
                     text-align: center;
+                    border-radius: 2px;
 
                     &:hover {
                         background: rgb(128, 206, 248);
