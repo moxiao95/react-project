@@ -13,6 +13,11 @@ class Nav extends Component {
 
     // 展示我的下的选项列表
     showChildrenList = () => {
+        // 清除定时器
+        if (this.timer) {
+            clearTimeout(this.timer);
+            this.timer = null;
+        }
         this.setState({
             childrenListShow: true,
         });
@@ -20,17 +25,19 @@ class Nav extends Component {
 
     // 关闭我的下的选项列表
     hideChildrenList = () => {
-        this.setState({
-            childrenListShow: false,
-        });
+        this.timer = setTimeout(() => {
+            this.setState({
+                childrenListShow: false,
+            });
+        }, 400);
     }
 
-    // 到 我的
+    // 到 '我的'
     toPersonal = () => {
         this.props.history.push('/personal');
     }
 
-    // 到 修改密码
+    // 到 '修改密码'
     toEdit = () => {
         this.props.history.push('/edit');
     }
@@ -85,11 +92,13 @@ class Nav extends Component {
                     <li
                         className="active-none"
                         onMouseEnter={this.showChildrenList}
+                        onMouseLeave={this.hideChildrenList}
                     >
                         <span className="my-title">我的</span>
                         <div
                             className="my-list"
                             style={{display: childrenListShow ? 'block' : 'none'}}
+                            onMouseEnter={this.showChildrenList}
                             onMouseLeave={this.hideChildrenList}
                         >
                             <div onClick={this.toPersonal}>个人中心</div>
